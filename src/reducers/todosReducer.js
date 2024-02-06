@@ -12,6 +12,7 @@ console.log(state)
       ];
     }
     case "TOGGLE_COMPLETED": {
+      console.log(state);
       return state.map((todo) => {
         if (todo.id === action.payload.id) {
           return { ...todo, completed: !todo.completed };

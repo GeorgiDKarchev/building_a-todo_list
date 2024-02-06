@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TodoItem({ todo, dispatch }) {
+function ToDoItem({ todo, dispatch }) {
   const { title, completed } = todo;
   const [showEdit, setShowEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
@@ -32,7 +32,7 @@ function TodoItem({ todo, dispatch }) {
           />
           <h3>{title}</h3>
           <button onClick={() => setShowEdit(!showEdit)}>Edit</button>
-          <button
+          <button disabled ={completed}//adding disabled button when text input ctive
             onClick={() =>
               dispatch({ type: "DELETE_TODO", payload: { id: todo.id } })
             }
@@ -45,4 +45,4 @@ function TodoItem({ todo, dispatch }) {
   );
 }
 
-export default TodoItem;
+export default ToDoItem;
