@@ -2,7 +2,7 @@
 export  function todosReducer(state, action) {
 console.log(state)
   switch (action.type) {
-    case "ADD_TODO": {
+    case "ADD_TODO": 
       return [
         {
           id: new Date().getTime(),
@@ -11,28 +11,28 @@ console.log(state)
         },
          ...state,
       ];
-    }
-    case "TOGGLE_COMPLETED": {
-      console.log(state);
-      return state.map((todo) => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, completed: !todo.completed };
-        }
-        return todo;
-      });
-    }
-    case "DELETE_TODO": {
+    
+    // case "TOGGLE_COMPLETED": {
+    //   console.log(state);
+    //   return state.map((todo) => {
+    //     if (todo.id === action.payload.id) {
+    //       return { ...todo, completed: !todo.completed };
+    //     }
+    //     return todo;
+    //   });
+    // }
+    case "DELETE_TODO": 
       return state.filter((todo) => todo.id !== action.payload.id);
-    }
+    
 
-    case "EDIT_TODO": {
-      return state.map((todo) => {
+    case "EDIT_TODO": 
+      return state?.map((todo) => {
         if (todo.id === action.payload.id) {
           return { ...todo, title: action.payload.title };
         }
         return todo;
       });
-    }
+    
     default:
       return state;
   }
