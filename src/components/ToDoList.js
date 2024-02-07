@@ -4,12 +4,14 @@ import ToDoItem from "./ToDoItem";
 function ToDoList({ todos, dispatch }) {
   const [title, setTitle] = useState("");
 
+//adding new todo task to the data list
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ 
     type: "ADD_TODO", 
     payload: { title } });
     setTitle("");
+    console.log(title);
   };
 
   return (
@@ -37,3 +39,4 @@ function ToDoList({ todos, dispatch }) {
 }
 
 export default ToDoList;
+

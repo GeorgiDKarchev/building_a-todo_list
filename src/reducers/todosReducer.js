@@ -1,4 +1,5 @@
-export function todosReducer(state, action) {
+
+export  function todosReducer(state, action) {
 console.log(state)
   switch (action.type) {
     case "ADD_TODO": {
@@ -8,7 +9,7 @@ console.log(state)
           title: action.payload.title,
           completed: false,
         },
-        ...state,
+         ...state,
       ];
     }
     case "TOGGLE_COMPLETED": {

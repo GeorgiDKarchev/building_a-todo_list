@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function ToDoItem({ todo, dispatch }) {
   const { title, completed } = todo;
+  //setting the states
   const [showEdit, setShowEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
 
@@ -46,3 +47,5 @@ function ToDoItem({ todo, dispatch }) {
 }
 
 export default ToDoItem;
+
+

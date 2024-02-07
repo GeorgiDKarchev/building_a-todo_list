@@ -1,6 +1,7 @@
 import { useReducer } from "react";
-import { initialState } from "./data/ToDoData";
-import { todosReducer } from "./reducers/todosReducer";
+//this import our data set
+import { initialState } from "./data/todosData";
+import {todosReducer} from "./reducers/todosReducer";
 import ToDoList from "./components/ToDoList";
 //import "./styles.css";
 
@@ -16,3 +17,4 @@ import ToDoList from "./components/ToDoList";
 }
 
 export default App;
+
