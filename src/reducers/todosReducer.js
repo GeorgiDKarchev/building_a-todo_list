@@ -1,6 +1,5 @@
 
 export  function todosReducer(state, action) {
-console.log(state)
   switch (action.type) {
     case "ADD_TODO": 
       return [
@@ -9,18 +8,17 @@ console.log(state)
           title: action.payload.title,
           completed: false,
         },
-         ...state,
+        ...state,
       ];
     
-    // case "TOGGLE_COMPLETED": {
-    //   console.log(state);
-    //   return state.map((todo) => {
-    //     if (todo.id === action.payload.id) {
-    //       return { ...todo, completed: !todo.completed };
-    //     }
-    //     return todo;
-    //   });
-    // }
+    case "TOGGLE_COMPLETED": 
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+      });
+    
     case "DELETE_TODO": 
       return state.filter((todo) => todo.id !== action.payload.id);
     
@@ -34,7 +32,7 @@ console.log(state)
       });
     
     default:
-      return state;
+      //return state;
   }
 }
 

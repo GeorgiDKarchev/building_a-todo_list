@@ -7,6 +7,7 @@ import ToDoList from "./components/ToDoList";
 
  function App() {
   const [todos, dispatch] = useReducer(todosReducer, initialState);
+  
   return (
     <div className="App">
       <h1> React Todo App</h1>
